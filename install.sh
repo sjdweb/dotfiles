@@ -15,7 +15,7 @@ dotfiles_echo() {
 
 set -e # Terminate script if anything exits with a non-zero value
 
-files="gitconfig gitconfig.local gitignore_global gitmessage hushlogin npmrc zshrc"
+files="gitconfig gitignore_global gitmessage hushlogin npmrc zshrc"
 DOTFILES_DIR=$HOME/dotfiles
 VIM_DIR=$DOTFILES_DIR/vim
 

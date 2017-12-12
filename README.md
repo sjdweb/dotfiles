@@ -21,7 +21,7 @@ Installation
 
 ```sh
 git clone https://github.com/sjdweb/dotfiles.git ~/dotfiles
-. ~/dotfiles/install.sh
+sh ~/dotfiles/install.sh
 ```
 
 
@@ -32,6 +32,10 @@ After running `install.sh` there are still a couple of things that need to be do
 
 * Set up iTerm2 profile (see details below).
 * Add personal data to `~/.gitconfig.local` and `~/.zshrc.local`.
+```sh
+cp ~/dotfiles/gitconfig.local.example ~/.gitconfig.local
+vi ~/.gitconfig.local
+```
 
 
 Setting up iTerm2

@@ -1,19 +1,9 @@
 My Dotfiles for macOS
 =====================
 
-These are the dotfiles I use on my Macs, currently running Also included is my [iTerm2][iterm2] profile.
+These are the dotfiles I use.
 
 Forked from [here](https://github.com/joshukraine/dotfiles)
-
-
-Mac Bootstrap Script
---------------------
-
-This repo previously contained my entire provisioning solution for a new machine running a fresh install of macOS. I've now extracted the provisioning functionality into its own repository. Check it out:
-
-&#9657; **Provision a new Mac with [Mac Bootstrap][mac-bootstrap].**
-
-NOTE: Mac Bootstrap automatically clones and installs this dotfiles repo.
 
 
 Prerequisites
@@ -22,19 +12,16 @@ Prerequisites
 The dotfiles assume you are running macOS with the following software preinstalled:
 
 * [Oh-My-Zsh][oh-my-zsh]
-* [Homebrew][homebrew]
 * [Vim][vim]
 * [Git][git]
-
-All of the above and more are included in [Mac Bootstrap][mac-bootstrap]
 
 
 Installation
 ------------
 
 ```sh
-git clone https://github.com/joshukraine/dotfiles.git ~/dotfiles
-source ~/dotfiles/install.sh
+git clone https://github.com/sjdweb/dotfiles.git ~/dotfiles
+. ~/dotfiles/install.sh
 ```
 
 
@@ -45,7 +32,6 @@ After running `install.sh` there are still a couple of things that need to be do
 
 * Set up iTerm2 profile (see details below).
 * Add personal data to `~/.gitconfig.local` and `~/.zshrc.local`.
-* Complete [Brew Bundle][brew-bundle] with `brew bundle install --global`
 
 
 Setting up iTerm2

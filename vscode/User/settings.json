@@ -1,0 +1,68 @@
+// Place your settings in this file to overwrite the default settings
+{
+  "editor.tabSize": 2,
+  "editor.rulers": [
+    100,
+    120
+  ],
+  "html.format.wrapLineLength": 120,
+  "editor.wordWrapColumn": 120,
+  "terminal.integrated.fontFamily": "Meslo LG S for Powerline",
+  "terminal.integrated.fontSize": 12,
+  "editor.formatOnSave": true,
+  "window.zoomLevel": 0,
+  "workbench.colorTheme": "One Dark Pro",
+  "editor.fontSize": 11,
+  "workbench.iconTheme": "vs-seti",
+  "window.title": "${activeEditorLong}${separator}${rootName}",
+  "window.nativeTabs": false,
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/node_modules": true,
+    "**/.happypack": true,
+  },
+  "terminal.external.osxExec": "iTerm.app",
+  "terminal.integrated.shell.osx": "/bin/zsh",
+  "git.enableSmartCommit": true,
+  "git.autofetch": false,
+  "workbench.startupEditor": "welcomePage",
+  "gitlens.advanced.messages": {
+    "suppressCommitHasNoPreviousCommitWarning": false,
+    "suppressCommitNotFoundWarning": false,
+    "suppressFileNotUnderSourceControlWarning": false,
+    "suppressGitVersionWarning": false,
+    "suppressLineUncommittedWarning": false,
+    "suppressNoRepositoryWarning": false,
+    "suppressResultsExplorerNotice": true,
+    "suppressShowKeyBindingsNotice": true
+  },
+  "gitlens.keymap": "alternate",
+  "telemetry.enableTelemetry": false,
+  "workbench.statusBar.feedback.visible": false,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "breadcrumbs.enabled": true,
+  "git.confirmSync": false,
+  "gitlens.views.fileHistory.enabled": true,
+  "gitlens.views.lineHistory.enabled": true,
+  "go.formatTool": "gofmt",
+  "go.lintTool": "golangci-lint",
+  "go.useLanguageServer": true,
+  "go.buildTags": "integration",
+  // "go.useLanguageServer": true,
+  // "go.alternateTools": {
+  //   "go-langserver": "bingo"
+  // },
+  // "go.languageServerFlags": [
+  //   "-enhance-signature-help",
+  //   "-trace",
+  //   "-format-style=goimports",
+  // ],
+  // "go.languageServerExperimentalFeatures": {
+  //   "format": true,
+  //   "autoComplete": true
+  // }
+}

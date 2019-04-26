@@ -93,11 +93,9 @@
 [push]
   default = simple
 
-# [url "https://github.com/"]
-#   insteadOf = git@github.com:
-
-[url "https://"]
-  insteadOf = git://
-
 [url "ssh://git@github.com/"]
-	insteadOf = https://github.com/
+  insteadOf = https://github.com/
+
+[user]
+	name = Sean Drumm
+	email = sean@seandrumm.co.uk

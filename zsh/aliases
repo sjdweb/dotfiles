@@ -114,6 +114,8 @@ alias gwip='git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commi
 
 alias gcdp='git checkout develop && git pull'
 
+alias gcmp='git checkout master && git pull'
+
 # Upgrade Oh My Zshell
 alias upz='upgrade_oh_my_zsh'
 

@@ -8,11 +8,11 @@
   "html.format.wrapLineLength": 120,
   "editor.wordWrapColumn": 120,
   "terminal.integrated.fontFamily": "Meslo LG S for Powerline",
-  "terminal.integrated.fontSize": 12,
+  "terminal.integrated.fontSize": 11,
   "editor.formatOnSave": true,
   "window.zoomLevel": 0,
   "workbench.colorTheme": "One Dark Pro",
-  "editor.fontSize": 11,
+  "editor.fontSize": 12,
   "workbench.iconTheme": "vs-seti",
   "window.title": "${activeEditorLong}${separator}${rootName}",
   "window.nativeTabs": false,
@@ -42,16 +42,15 @@
   },
   "gitlens.keymap": "alternate",
   "telemetry.enableTelemetry": false,
-  "workbench.statusBar.feedback.visible": false,
   "typescript.updateImportsOnFileMove.enabled": "always",
   "breadcrumbs.enabled": true,
   "git.confirmSync": false,
   "gitlens.views.fileHistory.enabled": true,
   "gitlens.views.lineHistory.enabled": true,
-  "go.formatTool": "gofmt",
+  // "go.formatTool": "gofmt",
   "go.lintTool": "golangci-lint",
   "go.useLanguageServer": true,
-  "go.buildTags": "integration",
+  // "go.buildTags": "integration",
   // "go.useLanguageServer": true,
   // "go.alternateTools": {
   //   "go-langserver": "bingo"
@@ -61,8 +60,17 @@
   //   "-trace",
   //   "-format-style=goimports",
   // ],
-  // "go.languageServerExperimentalFeatures": {
-  //   "format": true,
-  //   "autoComplete": true
-  // }
+  "go.languageServerExperimentalFeatures": {
+    "format": true,
+    "autoComplete": true
+  },
+  "go.toolsEnvVars": {
+    "GOFLAGS": "-tags=integration"
+  },
+  "latex-workshop.view.pdf.viewer": "tab",
+  "go.useCodeSnippetsOnFunctionSuggest": true,
+  "gopls": {
+    "usePlaceholders": true // add parameter placeholders when completing a function
+  },
+  "python.jediEnabled": false,
 }

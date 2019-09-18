@@ -31,12 +31,7 @@
   "git.autofetch": false,
   "workbench.startupEditor": "welcomePage",
   "gitlens.advanced.messages": {
-    "suppressCommitHasNoPreviousCommitWarning": false,
-    "suppressCommitNotFoundWarning": false,
-    "suppressFileNotUnderSourceControlWarning": false,
-    "suppressGitVersionWarning": false,
-    "suppressLineUncommittedWarning": false,
-    "suppressNoRepositoryWarning": false,
+    "suppressLineUncommittedWarning": true,
     "suppressResultsExplorerNotice": true,
     "suppressShowKeyBindingsNotice": true
   },
@@ -51,6 +46,7 @@
   "go.lintTool": "golangci-lint",
   "go.useLanguageServer": true,
   // "go.buildTags": "integration",
+  "go.buildTags": "integration",
   // "go.useLanguageServer": true,
   // "go.alternateTools": {
   //   "go-langserver": "bingo"

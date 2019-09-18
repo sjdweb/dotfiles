@@ -19,6 +19,8 @@ SAVEHIST=1000000
 HISTFILE=~/.zsh_history
 HIST_STAMPS="yyyy-mm-dd"
 
+export NVM_LAZY_LOAD=true
+
 ZSH_THEME="avit"
 source $HOME/dotfiles/zsh/oh-my-zsh
 source $HOME/dotfiles/zsh/aliases
@@ -30,9 +32,9 @@ source $HOME/dotfiles/zsh/z.sh
 #[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 #[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 #export NODE_ENV=development
-# Defer initialization of nvm until nvm, node or a node-dependent command is
-# run. Ensure this block is only run once if .bashrc gets sourced multiple times
-# by checking whether __init_nvm is a function.
+#  Defer initialization of nvm until nvm, node or a node-dependent command is
+#  run. Ensure this block is only run once if .bashrc gets sourced multiple times
+#  by checking whether __init_nvm is a function.
 if [ -s "$HOME/.nvm/nvm.sh" ] && [ ! "$(type -f __init_nvm)" = function ]; then
   export NVM_DIR="$HOME/.nvm"
   [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"

@@ -7,7 +7,8 @@
   ],
   "html.format.wrapLineLength": 120,
   "editor.wordWrapColumn": 120,
-  "editor.fontFamily": "'Ubuntu Mono', Monaco, 'Courier New', monospace",
+  // "editor.fontFamily": "'Ubuntu Mono', Monaco, 'Courier New', monospace",
+  "editor.fontFamily": "'Jetbrains Mono', Monaco, 'Courier New', monospace",
   "terminal.integrated.fontFamily": "Meslo LG S for Powerline",
   "terminal.integrated.fontSize": 12,
   "editor.formatOnSave": true,
@@ -47,7 +48,6 @@
   "go.lintTool": "golangci-lint",
   "go.useLanguageServer": true,
   // "go.buildTags": "integration",
-  "go.buildTags": "integration",
   // "go.useLanguageServer": true,
   // "go.alternateTools": {
   //   "go-langserver": "bingo"
@@ -70,4 +70,24 @@
     "usePlaceholders": true // add parameter placeholders when completing a function
   },
   "python.jediEnabled": false,
+  "vsonline.planFilter": "/subscriptions/3f2774e0-beff-4726-94aa-abb0c8c7ec67/resourceGroups/vso-rg-5248d26/providers/Microsoft.VSOnline/plans/vso-plan-westeurope",
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "terraform.indexing": {
+    "enabled": false,
+    "liveIndexing": false,
+    "delay": 500,
+    "exclude": [
+      ".terraform/**/*",
+      "**/.terraform/**/*"
+    ]
+  },
+  "terraform.languageServer": {
+    "enabled": true,
+    "args": []
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "vsonline.authentication.accountProvider": "Microsoft",
 }

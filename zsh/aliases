@@ -151,3 +151,6 @@ alias color='colortest -w -s'
 # Some Kubectl stuff
 alias k='kubectl'
 alias kball='kubectl get svc,deployment,pods'
+
+# Docker
+alias dkhtop='docker run -it --pid=host jess/htop'

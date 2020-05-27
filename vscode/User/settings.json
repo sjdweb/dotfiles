@@ -13,7 +13,6 @@
   "terminal.integrated.fontSize": 12,
   "editor.formatOnSave": true,
   "window.zoomLevel": 0,
-  "workbench.colorTheme": "One Dark Pro",
   "editor.fontSize": 12,
   "workbench.iconTheme": "vs-seti",
   "window.title": "${activeEditorLong}${separator}${rootName}",
@@ -90,4 +89,5 @@
     "editor.defaultFormatter": "vscode.json-language-features"
   },
   "vsonline.authentication.accountProvider": "Microsoft",
+  "workbench.colorTheme": "GitHub Dark",
 }

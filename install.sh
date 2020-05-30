@@ -49,5 +49,27 @@ ln -nfs "$DOTFILES_DIR"/init.vim "$NVIM_DIR"/init.vim
 dotfiles_echo "-> Linking $DOTFILES_DIR/coc-settings.json to $NVIM_DIR/coc-settings.json..."
 ln -nfs "$DOTFILES_DIR"/coc-settings.json "$NVIM_DIR"/coc-settings.json
 
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  dotfiles_echo "Detected Darwin, adding OS specific links"
+  # Sublime Text 3
+  if [ -d "$HOME/Library/Application\ Support/Sublime\ Text\ 3/Packages/User" ]; then
+    dotfiles_echo "Sublime Text 3 User dir already present. Backing up..."
+    mv $HOME/Library/Application\ Support/Sublime\ Text\ 3/Packages/User $HOME/Library/Application\ Support/Sublime\ Text\ 3/Packages/User.bk
+  fi
+  rm -f $HOME/Library/Application\ Support/Sublime\ Text\ 3/Packages/User 
+  dotfiles_echo "-> Linking $DOTFILES_DIR/sublime/User/ to $HOME/Application Support/Sublime Text 3/Packages/User"
+  ln -s $DOTFILES_DIR/sublime/User $HOME/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
+
+  # VSCode
+  if [ -d "$HOME/Library/Application\ Support/Code/User" ]; then
+    dotfiles_echo "VS Code User dir already present. Backing up..."
+    mv $HOME/Library/Application\ Support/Code/User $HOME/Library/Application\ Support/Code/User.bk
+  fi
+  rm -f $HOME/Library/Application\ Support/Code/User 
+  dotfiles_echo "-> Linking $DOTFILES_DIR/vscode/User/ to $HOME/Application Support/Code/User"
+  ln -s $DOTFILES_DIR/vscode/User $HOME/Library/Application\ Support/Code/User
+fi
+
+
 dotfiles_echo "Dotfiles installation complete!"
 dotfiles_echo "Complete Brew Bundle installation with 'brew bundle install -v --global'"

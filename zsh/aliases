@@ -152,5 +152,10 @@ alias color='colortest -w -s'
 alias k='kubectl'
 alias kball='kubectl get svc,deployment,pods'
 
+function kx() {
+  NAMESPACE="${2:-default}"
+  kubectl --namespace $NAMESPACE exec -i -t $(kubectl --namespace $NAMESPACE get pod -l "app=$1" -o jsonpath='{.items[0].metadata.name}') -- bash
+}
+
 # Docker
 alias dkhtop='docker run -it --pid=host jess/htop'

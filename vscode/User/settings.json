@@ -82,8 +82,10 @@
     ]
   },
   "terraform.languageServer": {
-    "enabled": true,
-    "args": []
+    "external": true,
+    "args": [
+      "serve"
+    ]
   },
   "[json]": {
     "editor.defaultFormatter": "vscode.json-language-features"
@@ -92,5 +94,6 @@
   "workbench.colorTheme": "GitHub Dark",
   "vsonline.accountProvider": "Microsoft",
   "codespaces.accountProvider": "Microsoft",
-  "codespaces.planFilter": "/subscriptions/3f2774e0-beff-4726-94aa-abb0c8c7ec67/resourceGroups/vso-rg-5248d26/providers/Microsoft.VSOnline/plans/vso-plan-westeurope",
+"codespaces.planFilter": "/subscriptions/3f2774e0-beff-4726-94aa-abb0c8c7ec67/resourceGroups/vso-rg-5248d26/providers/Microsoft.VSOnline/plans/vso-plan-westeurope",
+"python.languageServer": "Microsoft",
 }

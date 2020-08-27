@@ -28,6 +28,15 @@ Plug 'joshdick/onedark.vim'
 
 Plug 'HerringtonDarkholme/yats.vim' " TS Syntax
 
+Plug 'vim-airline/vim-airline' " slow
+Plug 'vim-airline/vim-airline-themes'
+Plug 'edkolev/tmuxline.vim'
+
+" Python stuff
+Plug 'psf/black', { 'tag': '19.10b0' }
+Plug 'jmcantrell/vim-virtualenv'
+Plug 'dense-analysis/ale'
+
 " Initialize plugin system
 call plug#end()
 
@@ -35,6 +44,9 @@ inoremap jk <ESC>
 nmap <C-n> :NERDTreeToggle<CR>
 vmap ++ <plug>NERDCommenterToggle
 nmap ++ <plug>NERDCommenterToggle
+
+let g:airline_theme = 'gruvbox'
+let g:airline#extensions#tmuxline#enabled = 0
 
 " open NERDTree automatically
 "autocmd StdinReadPre * let s:std_in=1
@@ -66,6 +78,9 @@ command! -nargs=0 Prettier :CocCommand prettier.formatFile
 "let g:prettier#autoformat = 0
 "autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
 
+" Black Python formatter
+autocmd BufWritePre *.py execute ':Black'
+
 
 " ctrlp
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
@@ -74,7 +89,11 @@ let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclu
 noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
 noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
 
-set relativenumber
+" set relativenumber
+set number
+set nu
+
+set backspace=indent,eol,start
 
 set smarttab
 set cindent
@@ -83,8 +102,8 @@ set shiftwidth=2
 " always uses spaces instead of tab characters
 set expandtab
 
-"colorscheme gruvbox
-colorscheme onedark
+colorscheme gruvbox
+"colorscheme onedark
 
 " sync open file with NERDTree
 " " Check if NERDTree is open or active

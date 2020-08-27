@@ -99,3 +99,5 @@
 [user]
 	name = Sean Drumm
 	email = sean.drumm@gmail.com
+[diff "sopsdiffer"]
+	textconv = sops -d

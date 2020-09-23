@@ -73,6 +73,8 @@ alias gap='git add --patch'
 alias gb='git branch'
 alias gba='git branch --all'
 alias gbr='git branch --remote'
+alias gbpp='git fetch -p && git branch -vv | awk "/: gone]/{print $1}"'
+alias gbp='git fetch -p && git branch -vv | awk "/: gone]/{print $1}" | xargs git branch -D'
 
 alias gca='git commit --amend'
 alias gci='git commit -v'

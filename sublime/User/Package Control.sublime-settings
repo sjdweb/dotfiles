@@ -5,7 +5,10 @@
 	],
 	"installed_packages":
 	[
+		"MarkdownEditing",
+		"MarkdownLivePreview",
 		"Package Control",
+		"Pretty JSON",
 		"Theme - Flatland"
 	]
 }

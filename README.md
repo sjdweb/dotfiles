@@ -5,6 +5,7 @@ These are the dotfiles I use.
 
 Forked from [here](https://github.com/joshukraine/dotfiles)
 
+test
 
 Prerequisites
 -------------

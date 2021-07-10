@@ -56,18 +56,22 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     dotfiles_echo "Sublime Text 3 User dir already present. Backing up..."
     mv $HOME/Library/Application\ Support/Sublime\ Text\ 3/Packages/User $HOME/Library/Application\ Support/Sublime\ Text\ 3/Packages/User.bk
   fi
-  rm -f $HOME/Library/Application\ Support/Sublime\ Text\ 3/Packages/User 
-  dotfiles_echo "-> Linking $DOTFILES_DIR/sublime/User/ to $HOME/Application Support/Sublime Text 3/Packages/User"
-  ln -s $DOTFILES_DIR/sublime/User $HOME/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
+  if [ -d "$HOME/Library/Application\ Support/Sublime\ Text\ 3" ]; then
+    rm -f $HOME/Library/Application\ Support/Sublime\ Text\ 3/Packages/User 
+    dotfiles_echo "-> Linking $DOTFILES_DIR/sublime/User/ to $HOME/Application Support/Sublime Text 3/Packages/User"
+    ln -s $DOTFILES_DIR/sublime/User $HOME/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
+  fi
 
   # VSCode
   if [ -d "$HOME/Library/Application\ Support/Code/User" ]; then
     dotfiles_echo "VS Code User dir already present. Backing up..."
     mv $HOME/Library/Application\ Support/Code/User $HOME/Library/Application\ Support/Code/User.bk
   fi
-  rm -f $HOME/Library/Application\ Support/Code/User 
-  dotfiles_echo "-> Linking $DOTFILES_DIR/vscode/User/ to $HOME/Application Support/Code/User"
-  ln -s $DOTFILES_DIR/vscode/User $HOME/Library/Application\ Support/Code/User
+  if [ -d "$HOME/Library/Application\ Support/Code" ]; then
+    rm -f $HOME/Library/Application\ Support/Code/User 
+    dotfiles_echo "-> Linking $DOTFILES_DIR/vscode/User/ to $HOME/Application Support/Code/User"
+    ln -s $DOTFILES_DIR/vscode/User $HOME/Library/Application\ Support/Code/User
+  fi
 fi
 
 

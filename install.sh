@@ -66,12 +66,10 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   if [ -d "$HOME/Library/Application\ Support/Code/User" ]; then
     dotfiles_echo "VS Code User dir already present. Backing up..."
     mv $HOME/Library/Application\ Support/Code/User $HOME/Library/Application\ Support/Code/User.bk
-  fi
-  if [ -d "$HOME/Library/Application\ Support/Code" ]; then
     rm -f $HOME/Library/Application\ Support/Code/User 
-    dotfiles_echo "-> Linking $DOTFILES_DIR/vscode/User/ to $HOME/Application Support/Code/User"
-    ln -s $DOTFILES_DIR/vscode/User $HOME/Library/Application\ Support/Code/User
   fi
+  dotfiles_echo "-> Linking $DOTFILES_DIR/vscode/User/ to $HOME/Application Support/Code/User"
+  ln -s $DOTFILES_DIR/vscode/User $HOME/Library/Application\ Support/Code
 fi
 
 

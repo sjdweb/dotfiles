@@ -101,3 +101,8 @@
 	email = sean.drumm@gmail.com
 [diff "sopsdiffer"]
 	textconv = sops -d
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

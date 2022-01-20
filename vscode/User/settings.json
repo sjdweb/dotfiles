@@ -12,7 +12,6 @@
   "terminal.integrated.fontFamily": "Meslo LG S for Powerline",
   "terminal.integrated.fontSize": 12,
   "editor.formatOnSave": true,
-  "window.zoomLevel": 0,
   "editor.fontSize": 12,
   "workbench.iconTheme": "vs-seti",
   "window.title": "${activeEditorLong}${separator}${rootName}",
@@ -95,7 +94,6 @@
   "codespaces.accountProvider": "Microsoft",
   "codespaces.planFilter": "/subscriptions/3f2774e0-beff-4726-94aa-abb0c8c7ec67/resourceGroups/vso-rg-5248d26/providers/Microsoft.VSOnline/plans/vso-plan-westeurope",
   "python.formatting.provider": "black",
-  "python.languageServer": "Microsoft",
   "[django-html]": {
     "editor.defaultFormatter": "HookyQR.beautify"
   },
@@ -107,4 +105,8 @@
     "default": "right",
     "jupyter-notebook": "left"
   },
+"redhat.telemetry.enabled": false,
+"python.languageServer": "Default",
+"window.zoomLevel": 1,
+"diffEditor.ignoreTrimWhitespace": false,
 }

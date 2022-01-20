@@ -177,3 +177,4 @@ function kctx() {
 
 # Docker
 alias dkhtop='docker run -it --pid=host jess/htop'
+alias docker-remote='export DOCKER_HOST=ssh://sean@a310'

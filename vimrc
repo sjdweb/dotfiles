@@ -14,7 +14,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'ryanoasis/vim-devicons'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
-Plug 'ctrlpvim/ctrlp.vim' " fuzzy find files
 "Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 
 Plug 'christoomey/vim-tmux-navigator'
@@ -58,8 +57,8 @@ command! -nargs=0 Prettier :CocCommand prettier.formatFile
 " Black Python formatter
 autocmd BufWritePre *.py execute ':Black'
 
-" ctrlp
-let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+" FZF
+nmap <C-P> :FZF<CR>
 
 " j/k will move virtual lines (lines that wrap)
 noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')

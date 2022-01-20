@@ -59,6 +59,7 @@ autocmd BufWritePre *.py execute ':Black'
 
 " FZF
 nmap <C-P> :FZF<CR>
+nmap <C-g> :Rg<CR>
 
 " j/k will move virtual lines (lines that wrap)
 noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')

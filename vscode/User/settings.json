@@ -105,8 +105,11 @@
     "default": "right",
     "jupyter-notebook": "left"
   },
-"redhat.telemetry.enabled": false,
-"python.languageServer": "Default",
-"window.zoomLevel": 1,
-"diffEditor.ignoreTrimWhitespace": false,
+  "redhat.telemetry.enabled": false,
+  "python.languageServer": "Default",
+  "diffEditor.ignoreTrimWhitespace": false,
+  "tabnine.experimentalAutoImports": true,
+  "window.zoomLevel": 1,
+  "editor.inlineSuggest.enabled": true,
+  "notebook.output.textLineLimit": 100,
 }

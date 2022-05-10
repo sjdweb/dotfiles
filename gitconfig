@@ -88,12 +88,12 @@
   ff = false
 
 [pull]
-  rebase = merges
+  rebase = true
 
 [push]
   default = simple
 
-[url "ssh://git@github.com/"]
+[url "git@github.com:"]
   insteadOf = https://github.com/
 
 [user]

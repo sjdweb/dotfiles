@@ -116,6 +116,8 @@ alias gwip='git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commi
 
 alias gcdp='git checkout develop && git pull'
 
+alias gsw='git switch'
+
 gcmp () {
   if [ $(git rev-parse --verify --quiet main) ]; then
     git checkout main && git pull

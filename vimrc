@@ -212,3 +212,5 @@ nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
 " Fzf
 nnoremap <leader><leader> :GFiles<CR>
+
+set clipboard=unnamed

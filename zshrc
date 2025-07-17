@@ -30,31 +30,37 @@ source $HOME/dotfiles/zsh/aliases
 source $HOME/dotfiles/zsh/functions
 source $HOME/dotfiles/zsh/z.sh
 
-# Load Homebrew completions (Apple Silicon)
-if type brew &>/dev/null; then
-  FPATH=/opt/homebrew/share/zsh/site-functions:$FPATH
-  autoload -Uz compinit
-  compinit
-fi
+# Load completions
+autoload -Uz compinit
+compinit
 
-# pnpm
-export PNPM_HOME="$HOME/Library/pnpm"
+# pnpm (cross-platform)
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  export PNPM_HOME="$HOME/Library/pnpm"
+else
+  export PNPM_HOME="$HOME/.local/share/pnpm"
+fi
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 
 # asdf version manager
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
+if [ -f "$HOME/.asdf/asdf.sh" ]; then
+  . "$HOME/.asdf/asdf.sh"
+fi
 
 # Starship prompt
-eval "$(starship init zsh)"
+if command -v starship &> /dev/null; then
+  eval "$(starship init zsh)"
+fi
 
-# zsh-autosuggestions
-source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+# Zap plugin manager
+[ -f "$HOME/.local/share/zap/zap.zsh" ] && source "$HOME/.local/share/zap/zap.zsh"
 
-# zsh-syntax-highlighting (must be last)
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# Plugins
+plug "zsh-users/zsh-autosuggestions"
+plug "zsh-users/zsh-syntax-highlighting"
 
 # Include local settings
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local

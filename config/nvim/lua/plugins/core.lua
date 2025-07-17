@@ -1,12 +1,4 @@
 return {
-  -- Configure LazyVim to use tokyonight colorscheme
-  {
-    "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "tokyonight",
-    },
-  },
-
   -- Add additional language support
   { import = "lazyvim.plugins.extras.lang.typescript" },
   { import = "lazyvim.plugins.extras.lang.json" },
@@ -20,4 +12,12 @@ return {
   
   -- Add GitHub Copilot (optional - comment out if not needed)
   -- { import = "lazyvim.plugins.extras.coding.copilot" },
+
+  -- Configure LazyVim to use tokyonight colorscheme
+  {
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "tokyonight",
+    },
+  },
 }

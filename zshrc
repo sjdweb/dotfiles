@@ -2,8 +2,8 @@
 
 # Core environment variables
 export PATH=$HOME/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin
-export EDITOR="vim"
-export BUNDLER_EDITOR="vim"
+export EDITOR="nvim"
+export BUNDLER_EDITOR="nvim"
 export MANPAGER="less -X" # Don't clear the screen after quitting a manual page
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 export GOPATH=$HOME/go

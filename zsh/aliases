@@ -1,16 +1,17 @@
-# Vim specific
-alias vi='vim'
-alias vir='vim -R'
-alias vv='vim --version | less'
+# Neovim specific
+alias vi='nvim'
+alias vim='nvim'
+alias vir='nvim -R'
+alias vv='nvim --version | less'
 alias ct='ctags -R --languages=ruby --exclude=.git --exclude=log . $(bundle list --paths)'
-alias vi0='vim -u NONE'
+alias vi0='nvim -u NONE'
 
 # Jump to quick edits
 alias ea='$EDITOR ~/dotfiles/zsh/aliases'
 alias ed='$EDITOR ~/dotfiles'
 alias ef='$EDITOR ~/dotfiles/zsh/functions'
 alias ep='$EDITOR ~/dotfiles/zsh/prompt'
-alias ev='$EDITOR ~/.vimrc'
+alias ev='$EDITOR ~/.config/nvim/init.lua'
 alias ez='$EDITOR ~/.zshrc'
 alias ezl='$EDITOR ~/.zshrc.local'
 

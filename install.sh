@@ -35,6 +35,11 @@ done
 
 dotfiles_echo "Setting up LazyVim..."
 
+# Ensure .config directory exists
+if [ ! -d "$CONFIG_DIR" ]; then
+  mkdir -p "$CONFIG_DIR"
+fi
+
 # Remove old Neovim config if it exists
 if [ -d "$NVIM_DIR" ] && [ ! -L "$NVIM_DIR" ]; then
   dotfiles_echo "Backing up existing Neovim config..."

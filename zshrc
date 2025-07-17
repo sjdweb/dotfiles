@@ -1,9 +1,10 @@
 # ~/.zshrc
 
+# Core environment variables
 export PATH=$HOME/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin
 export EDITOR="vim"
 export BUNDLER_EDITOR="vim"
-export MANPAGER="less -X" # Don’t clear the screen after quitting a manual page
+export MANPAGER="less -X" # Don't clear the screen after quitting a manual page
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
@@ -11,45 +12,49 @@ export SOURCE_ANNOTATION_DIRECTORIES="spec"
 export DISABLE_AUTO_TITLE=true
 export _Z_OWNER=$USER
 
+# Zsh options
 setopt auto_cd
+setopt share_history
+setopt hist_ignore_dups
+setopt hist_ignore_space
 cdpath=($HOME/Code $HOME/dotfiles $HOME/Developer $HOME/Sites $HOME/Dropbox $HOME)
 
+# History configuration
 HISTSIZE=1000000
 SAVEHIST=1000000
 HISTFILE=~/.zsh_history
 HIST_STAMPS="yyyy-mm-dd"
 
-export NVM_LAZY_LOAD=true
-
-ZSH_THEME="avit"
-source $HOME/dotfiles/zsh/oh-my-zsh
+# Load modular configuration
 source $HOME/dotfiles/zsh/aliases
 source $HOME/dotfiles/zsh/functions
 source $HOME/dotfiles/zsh/z.sh
 
-# NVM
-if [ -z "$VSCODE_PID" ]; then
-	export NVM_LAZY_LOAD=true;
+# Load Homebrew completions (Apple Silicon)
+if type brew &>/dev/null; then
+  FPATH=/opt/homebrew/share/zsh/site-functions:$FPATH
+  autoload -Uz compinit
+  compinit
 fi
-#export NVM_DIR="$HOME/.nvm"
-#[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-#export NODE_ENV=development
-#  Defer initialization of nvm until nvm, node or a node-dependent command is
-#  run. Ensure this block is only run once if .bashrc gets sourced multiple times
-#  by checking whether __init_nvm is a function.
-if [ -s "$HOME/.nvm/nvm.sh" ] && [ ! "$(type -f __init_nvm)" = function ]; then
-  export NVM_DIR="$HOME/.nvm"
-  [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
-  declare -a __node_commands=('nvm' 'node' 'npm')
-  function __init_nvm() {
-    for i in "${__node_commands[@]}"; do unalias $i; done
-    . "$NVM_DIR"/nvm.sh
-    unset __node_commands
-    unset -f __init_nvm
-  }
-  for i in "${__node_commands[@]}"; do alias $i='__init_nvm && '$i; done
-fi
+
+# pnpm
+export PNPM_HOME="$HOME/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+
+# asdf version manager
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
+
+# Starship prompt
+eval "$(starship init zsh)"
+
+# zsh-autosuggestions
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# zsh-syntax-highlighting (must be last)
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Include local settings
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local

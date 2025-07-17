@@ -49,28 +49,21 @@ ln -nfs "$DOTFILES_DIR"/init.vim "$NVIM_DIR"/init.vim
 dotfiles_echo "-> Linking $DOTFILES_DIR/coc-settings.json to $NVIM_DIR/coc-settings.json..."
 ln -nfs "$DOTFILES_DIR"/coc-settings.json "$NVIM_DIR"/coc-settings.json
 
-if [[ "$OSTYPE" == "darwin"* ]]; then
-  dotfiles_echo "Detected Darwin, adding OS specific links"
-  # Sublime Text 3
-  if [ -d "$HOME/Library/Application\ Support/Sublime\ Text\ 3/Packages/User" ]; then
-    dotfiles_echo "Sublime Text 3 User dir already present. Backing up..."
-    mv $HOME/Library/Application\ Support/Sublime\ Text\ 3/Packages/User $HOME/Library/Application\ Support/Sublime\ Text\ 3/Packages/User.bk
-  fi
-  if [ -d "$HOME/Library/Application\ Support/Sublime\ Text\ 3" ]; then
-    rm -f $HOME/Library/Application\ Support/Sublime\ Text\ 3/Packages/User 
-    dotfiles_echo "-> Linking $DOTFILES_DIR/sublime/User/ to $HOME/Application Support/Sublime Text 3/Packages/User"
-    ln -s $DOTFILES_DIR/sublime/User $HOME/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
-  fi
-
-  # VSCode
-  if [ -d "$HOME/Library/Application\ Support/Code/User" ]; then
-    dotfiles_echo "VS Code User dir already present. Backing up..."
-    mv $HOME/Library/Application\ Support/Code/User $HOME/Library/Application\ Support/Code/User.bk
-    rm -f $HOME/Library/Application\ Support/Code/User 
-  fi
-  dotfiles_echo "-> Linking $DOTFILES_DIR/vscode/User/ to $HOME/Application Support/Code/User"
-  ln -s $DOTFILES_DIR/vscode/User $HOME/Library/Application\ Support/Code
+dotfiles_echo "Setting up Starship configuration..."
+if [ ! -d "$CONFIG_DIR" ]; then
+  mkdir -p "$CONFIG_DIR"
 fi
+dotfiles_echo "-> Linking $DOTFILES_DIR/config/starship.toml to $CONFIG_DIR/starship.toml..."
+ln -nfs "$DOTFILES_DIR"/config/starship.toml "$CONFIG_DIR"/starship.toml
+
+dotfiles_echo "Setting up Ghostty configuration..."
+if [ ! -d "$CONFIG_DIR/ghostty" ]; then
+  mkdir -p "$CONFIG_DIR/ghostty"
+fi
+dotfiles_echo "-> Linking $DOTFILES_DIR/config/ghostty/config to $CONFIG_DIR/ghostty/config..."
+ln -nfs "$DOTFILES_DIR"/config/ghostty/config "$CONFIG_DIR"/ghostty/config
+
+# OS-specific configurations can be added here if needed
 
 
 dotfiles_echo "Dotfiles installation complete!"

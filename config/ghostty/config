@@ -8,8 +8,8 @@ theme = tokyonight_moon
 
 # Font settings
 font-family = JetBrains Mono
-font-size = 17
-adjust-cell-height = 6
+font-size = 12
+adjust-cell-height = 4
 
 # Cursor settings
 cursor-style = block

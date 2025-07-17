@@ -15,7 +15,7 @@ dotfiles_echo() {
 
 set -e # Terminate script if anything exits with a non-zero value
 
-files="gitconfig gitignore_global gitmessage hushlogin npmrc zshrc vimrc tmux.conf"
+files="gitconfig gitignore_global gitmessage hushlogin npmrc zshrc tmux.conf"
 CONFIG_DIR=$HOME/.config
 DOTFILES_DIR=$HOME/dotfiles
 VIM_DIR=$DOTFILES_DIR/vim
@@ -33,21 +33,17 @@ for file in $files; do
   ln -nfs "$DOTFILES_DIR/$file" "$HOME/.$file"
 done
 
-dotfiles_echo "Setting up Vim and Neovim..."
+dotfiles_echo "Setting up LazyVim..."
 
-if [ ! -d "$VIM_DIR" ]; then
-  mkdir -p "$VIM_DIR"
+# Remove old Neovim config if it exists
+if [ -d "$NVIM_DIR" ] && [ ! -L "$NVIM_DIR" ]; then
+  dotfiles_echo "Backing up existing Neovim config..."
+  mv "$NVIM_DIR" "$NVIM_DIR.backup.$(date +%Y%m%d_%H%M%S)"
 fi
 
-if [ ! -d "$NVIM_DIR" ]; then
-  mkdir -p "$NVIM_DIR"
-fi
-
-dotfiles_echo "-> Linking $DOTFILES_DIR/init.vim to $NVIM_DIR/init.vim..."
-ln -nfs "$DOTFILES_DIR"/init.vim "$NVIM_DIR"/init.vim
-
-dotfiles_echo "-> Linking $DOTFILES_DIR/coc-settings.json to $NVIM_DIR/coc-settings.json..."
-ln -nfs "$DOTFILES_DIR"/coc-settings.json "$NVIM_DIR"/coc-settings.json
+# Symlink the entire nvim config directory
+dotfiles_echo "-> Linking $DOTFILES_DIR/config/nvim to $CONFIG_DIR/nvim..."
+ln -nfs "$DOTFILES_DIR/config/nvim" "$CONFIG_DIR/nvim"
 
 dotfiles_echo "Setting up Starship configuration..."
 if [ ! -d "$CONFIG_DIR" ]; then

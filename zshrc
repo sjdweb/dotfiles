@@ -7,7 +7,7 @@ export BUNDLER_EDITOR="nvim"
 export MANPAGER="less -X" # Don't clear the screen after quitting a manual page
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOPATH/bin:/usr/local/go/bin
 export SOURCE_ANNOTATION_DIRECTORIES="spec"
 export DISABLE_AUTO_TITLE=true
 export _Z_OWNER=$USER
@@ -61,6 +61,9 @@ fi
 # Plugins
 plug "zsh-users/zsh-autosuggestions"
 plug "zsh-users/zsh-syntax-highlighting"
+
+# UV (Python package manager)
+export PATH="$HOME/.local/bin:$PATH"
 
 # Include local settings
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local

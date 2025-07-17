@@ -72,14 +72,6 @@
 [fetch]
   prune = true
 
-[gitsh]
-  defaultCommand = status --short --branch
-
-[gitsh "color"]
-  default = blue
-  untracked = cyan
-  modified = red
-
 [include]
   path = ~/.gitconfig.local
 

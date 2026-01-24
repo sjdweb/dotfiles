@@ -14,9 +14,16 @@ export _Z_OWNER=$USER
 
 # Zsh options
 setopt auto_cd
-setopt share_history
+setopt append_history          # Append to history file on exit
+setopt inc_append_history      # Write commands as entered (for safety)
 setopt hist_ignore_dups
 setopt hist_ignore_space
+setopt hist_expire_dups_first  # Expire duplicates first when trimming
+setopt hist_verify             # Show command before executing from history
+
+# Make word operations stop at path separators (like oh-my-zsh did)
+WORDCHARS=${WORDCHARS//\//}
+
 cdpath=($HOME/Code $HOME/dotfiles $HOME/Developer $HOME/Sites $HOME/Dropbox $HOME)
 
 # History configuration
@@ -69,8 +76,20 @@ bindkey '^[[B' history-substring-search-down
 bindkey '^[OA' history-substring-search-up
 bindkey '^[OB' history-substring-search-down
 
+# Word navigation (cross-terminal compatibility)
+bindkey '^[[1;3D' backward-word    # Alt+Left
+bindkey '^[[1;3C' forward-word     # Alt+Right
+bindkey '^[b' backward-word        # Option+b / ESC+b
+bindkey '^[f' forward-word         # Option+f / ESC+f
+
+# fzf key bindings and fuzzy completion
+command -v fzf &> /dev/null && source <(fzf --zsh)
+
 # UV (Python package manager)
 export PATH="$HOME/.local/bin:$PATH"
+
+# Remove duplicate PATH entries
+typeset -U PATH path
 
 # Include local settings
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
